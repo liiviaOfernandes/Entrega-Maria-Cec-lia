@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f3efe9" />
+  <title>Maria Cecília | JL Fotografia</title>
+  <meta name="description" content="Galeria particular de Maria Cecília — JL Fotografia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <section id="loginView" class="login-view" aria-label="Acesso à galeria">
+      <div id="loginCover" class="login-photo" aria-hidden="true"></div>
+      <div class="login-panel">
+        <div class="login-box">
+          <p class="eyebrow">JL FOTOGRAFIA</p>
+          <h1>Uma história<br><em>para guardar.</em></h1>
+          <p class="login-copy">Acesse sua galeria particular e reviva cada detalhe deste dia tão especial.</p>
+
+          <form id="loginForm" class="login-form" autocomplete="on">
+            <label>
+              <span>E-mail</span>
+              <input id="email" type="email" autocomplete="email" placeholder="seu@email.com" required />
+            </label>
+            <label>
+              <span>Senha</span>
+              <div class="password-row">
+                <input id="password" type="password" autocomplete="current-password" placeholder="••••" required />
+                <button id="togglePassword" type="button" class="icon-btn" aria-label="Mostrar senha">Ver</button>
+              </div>
+            </label>
+            <p id="loginError" class="login-error" role="alert" aria-live="polite"></p>
+            <button class="primary-btn" type="submit">Acessar minha galeria</button>
+          </form>
+
+          <p class="signature">Lívia & José · JL Fotografia</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="galleryView" class="gallery-view hidden" aria-label="Galeria de fotos">
+      <header class="topbar">
+        <div>
+          <strong>JL Fotografia</strong>
+          <span>Lívia & José</span>
+        </div>
+        <button id="logoutBtn" class="text-btn" type="button">Sair</button>
+      </header>
+
+      <section id="albumHero" class="album-hero">
+        <div class="album-overlay"></div>
+        <div class="album-content">
+          <p id="eventType" class="eyebrow light">BATIZADO</p>
+          <h2 id="albumTitle">Maria Cecília</h2>
+          <p id="albumDate" class="album-date">20 de setembro de 2026</p>
+        </div>
+      </section>
+
+      <section class="intro-section">
+        <p class="eyebrow">SUA GALERIA</p>
+        <h3>Memórias feitas para <em>permanecer.</em></h3>
+        <p id="albumMessage" class="intro-copy"></p>
+        <div class="gallery-meta">
+          <span id="photoCount"></span>
+          <span>•</span>
+          <span>Toque em uma foto para ampliar</span>
+        </div>
+      </section>
+
+      <section class="photos-section">
+        <div id="photoGrid" class="photo-grid"></div>
+        <div class="gallery-actions">
+          <button id="loadMoreBtn" class="outline-btn" type="button">Ver mais fotos</button>
+          <button id="backToTopBtn" class="text-btn hidden" type="button">Voltar ao topo ↑</button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>Fotografias que transformam instantes em memória.</p>
+        <strong>JL Fotografia</strong>
+      </footer>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Visualização da foto">
+    <button id="closeLightbox" class="lightbox-close" type="button" aria-label="Fechar">×</button>
+    <button id="prevPhoto" class="lightbox-nav prev" type="button" aria-label="Foto anterior">‹</button>
+    <div class="lightbox-inner">
+      <img id="lightboxImage" alt="" />
+      <div class="lightbox-bottom">
+        <span id="lightboxCounter"></span>
+        <a id="downloadPhoto" class="download-link" download>Baixar foto</a>
+      </div>
+    </div>
+    <button id="nextPhoto" class="lightbox-nav next" type="button" aria-label="Próxima foto">›</button>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
